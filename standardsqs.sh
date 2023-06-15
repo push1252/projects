@@ -1,13 +1,13 @@
 #!/bin/bash
 
 # List of queue names
-queue_names=("pos-details-update-dev")
+queue_names=("details-update")
 
 # Loop through the list of queue names
 for queue_name in "${queue_names[@]}"
 do
   # Create the queue
-  aws sqs create-queue --queue-name "$queue_name" --attributes '{"KmsMasterKeyId": ""}' --profile gromoinsure
+  aws sqs create-queue --queue-name "$queue_name" --attributes '{"KmsMasterKeyId": ""}' --profile pushpit
  
 
   # Check if the queue was created successfully
